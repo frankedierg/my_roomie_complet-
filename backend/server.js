@@ -33,6 +33,10 @@ app.get('/', (req, res) => {
     res.send('🚀 My Roomie API funcionando correctamente');
 });
 
+const roomRoutes = require('./routes/roomRoutes');
+app.use('/api/rooms', roomRoutes);
+
+
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/users', userRoutes);
 
