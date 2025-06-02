@@ -5,8 +5,13 @@ const roomSchema = new mongoose.Schema({
   description: String,
   location: String,
   price: Number,
+  billsIncluded: Boolean,
+  propertyType: String,
   available: { type: Boolean, default: true },
-  createdAt: { type: Date, default: Date.now }
+  createdAt: { type: Date, default: Date.now },
+   image: String  // <-- nuevo campo
 });
+
+
 
 module.exports = mongoose.model('Room', roomSchema);

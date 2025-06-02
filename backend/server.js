@@ -40,4 +40,13 @@ app.use('/api/rooms', roomRoutes);
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/users', userRoutes);
 
+const uploadRoutes = require('./routes/uploadRoutes');
+const path = require('path');
+
+// Permitir acceso a carpeta uploads
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// Ruta de subida
+app.use('/api/upload', uploadRoutes);
+
 
